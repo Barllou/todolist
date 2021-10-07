@@ -5,10 +5,6 @@ import { nanoid } from 'nanoid';
 
 import '../styles/App.css';
 
-function fRes() {
-
-}
-
 function App() {
   const [value1, setValue1] = useState('');
   const [value2, setValue2] = useState('');
