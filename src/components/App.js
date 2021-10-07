@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid';
 import '../styles/App.css';
 
 function fRes() {
-  
+
 }
 
 function App() {
@@ -17,12 +17,12 @@ function App() {
   const [value5, setValue5] = useState('');
 
   return <>
-    <input value={value1} onChange={event => setValue1(event.target.value)} />
-    <input value={value2} onChange={event => setValue2(event.target.value)} />
-    <input value={value3} onChange={event => setValue3(event.target.value)} />
-    <input value={value4} onChange={event => setValue4(event.target.value)} />
-    <input value={value5} onChange={event => setValue5(event.target.value)} />
-    <p></p>
+    <input value={value1} onChange={event => setValue1(event.target.value)} /><br/>
+    <input value={value2} onChange={event => setValue2(event.target.value)} /><br/>
+    <input value={value3} onChange={event => setValue3(event.target.value)} /><br/>
+    <input value={value4} onChange={event => setValue4(event.target.value)} /><br/>
+    <input value={value5} onChange={event => setValue5(event.target.value)} /><br/>
+    <p>{(+value1 + +value2 + +value3 + +value4 + +value5) / 5}</p>
   </>
 }
 
