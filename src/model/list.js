@@ -3,21 +3,18 @@ export function create(initDotos) {
 }
 
 export function add(list, todo) {
-  list.push(todo);
+  const newList = [...list];
 
-  return list;
+  newList.push(todo);
+
+  return newList;
 }
 
 export function remove(list, todo) {
-  let elTodo = list.indexOf(todo);
-
-  if (elTodo > -1) {
-    list.splice(elTodo, 1);
-  }
-  return list;
+  return list.filter((el) => el !== todo);
 }
 
+// eslint-disable-next-line no-unused-vars
 export function clear(list) {
-  list.length = 0;
-  return list;
+  return [];
 }
