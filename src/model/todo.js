@@ -1,18 +1,25 @@
-export function create(message) {
-  const result = { message: message, isDone: false };
-  return result;
+export function create(message = '') {
+  return { message: message, isDone: false };
 }
 
 export function toggle(todo) {
-  const newTodo = todo;
-  newTodo.isDone = !newTodo.isDone;
-
-  return newTodo;
+  return {
+    ...todo,
+    isDone: !todo.isDone,
+  };
 }
 
 export function edit(todo, message) {
-  const newTodo = todo;
-  newTodo.message = message;
+  return {
+    ...todo,
+    message,
+  };
+}
 
-  return newTodo;
+export function getMessage(todo) {
+  return todo.message;
+}
+
+export function getIsDone(todo) {
+  return todo.isDone;
 }
