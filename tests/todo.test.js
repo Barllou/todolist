@@ -1,32 +1,31 @@
 const todo = require('../src/model/todo');
 
-const message = 'text';
-const todoEl = { message: 'блаблабла', isDone: true };
-const objTest = { message: message, isDone: false };
+test('get message', () => {
+  const message = 'text';
+  const todoItem = todo.create(message);
 
-//'create'
-// Expected value:  {"isDone": false, "message": "text"} - исходник (результат function create()) почему-то value
-// Received object: {"isDone": false, "message": "text"} - итог является Object
-// Видимо поэтому тест не проходит
-test('create', () => {
-  expect(todo.create(message)).toContain(objTest);
+  expect(todo.getMessage(todoItem)).toEqual(message);
 });
 
-//'toggle'
-//Вроде дошло как сделать. В testObj новый объект, в котором после функции create isDone: false. Далее его сравниваю с объектом todoEl
-//в котором isDone по умолчанию true
+test('get isDone', () => {
+  const todoItem = todo.create('some text');
+
+  expect(todo.getIsDone(todoItem)).toEqual(false);
+});
+
 test('toggle', () => {
-  const testObj = todo.create(todoEl.message);
+  const todoItem = todo.create('todo');
+  const newTodoItem = todo.toggle(todoItem);
 
-  expect(todo.toggle(testObj)).toEqual(todoEl);
-  console.log(todoEl);
+  expect(todo.getIsDone(todoItem)).not.toEqual(todo.getIsDone(newTodoItem));
 });
 
-//'edit'
-//Тоже самое что и в тесте "create". Понимаю что типы разные, видимо поэтому тесты и не проходят, но не утверждаю :)
 test('edit', () => {
-  expect(todo.edit(todoEl, message)).toContain({
-    message: message,
-    isDone: true,
-  });
+  const text = 'todo';
+  const newText = 'new todo';
+  const todoItem = todo.create(text);
+  const newTodoItem = todo.edit(todoItem, newText);
+
+  expect(todo.getMessage(todoItem)).not.toEqual(todo.getMessage(newTodoItem)) &&
+    expect(todo.getMessage(todoItem)).toEqual(newText);
 });
