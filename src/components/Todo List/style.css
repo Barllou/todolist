@@ -1,0 +1,11 @@
+.todoList {
+    background-color: rgb(12, 73, 165);
+    width: 300px;
+    height: 330px;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+  }
+  

@@ -1,0 +1,30 @@
+.TodoEl {
+    color:white;
+    width: auto;
+    height: auto;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+    font-size: 14pt;
+    text-align: center;
+    background-color: rgb(107, 55, 55);
+    border-radius: 25px;
+  }
+
+  .elemButEdit {
+    color: black;
+    background-color: rgb(129, 133, 82);
+    width: 50px;
+    height: 27px;
+    margin-right: 10px;
+    border-radius: 25px;
+    font-size: 10pt;
+  }
+  
+  .elemButDel {
+    color: black;
+    background-color: rgb(170, 70, 70);
+    width: 50px;
+    height: 27px;
+    border-radius: 25px;
+    font-size: 10pt;
+  }

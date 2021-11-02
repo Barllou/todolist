@@ -1,4 +1,4 @@
-export function create(initDotos) {
+export function create(initDotos = []) {
   return initDotos;
 }
 
@@ -17,4 +17,8 @@ export function remove(list, todo) {
 // eslint-disable-next-line no-unused-vars
 export function clear(list) {
   return [];
+}
+
+export function getNth(list, idx) {
+  return list[idx];
 }
